@@ -1,4 +1,6 @@
-//you should have the below code to run the following command
+//you should have the below code to run the following command in the pom.xml file
+//I use a linux machine hence the javafx dependencies a linux specific. you need to use windows dependencies instead for a windows machine.
+//The above stated point can be understood by the tag named as classifier in the below code.
 /*
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -120,11 +122,6 @@
       <version>${javafx.version}</version>
       <classifier>linux</classifier>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>se.michaelthelin.spotify</groupId>
-      <artifactId>spotify-web-api-java</artifactId>
-      <version>6.5.1</version>
     </dependency>
   </dependencies>
 </project>
