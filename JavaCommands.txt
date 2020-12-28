@@ -1,0 +1,4 @@
+//for running javafx jar
+//you can also type this in a text document and store it as .batch file or .sh file and run it
+cd /PathToJar
+java --module-path /Path/javafx-sdk-14.0.1/lib --add-modules fxml,javafx.graphics,javafx.web -jar NameOfTheJarFile.jar
