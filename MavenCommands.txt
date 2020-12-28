@@ -133,6 +133,10 @@
 
 
 //for running a maven project
-mvm javaFx:run
+mvn javafx:run
 //for cleaning the previous maven build
-mvm clean
+mvn clean
+//to cleanly build and deploy artifacts into the shared repository
+mvn clean deploy
+//to cleanly build and run javafx artifacts
+mvn clean javafx:run
