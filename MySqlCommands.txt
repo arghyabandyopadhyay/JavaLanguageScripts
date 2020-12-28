@@ -1,0 +1,16 @@
+//to create a database from the filename.sql
+1. Login to mysql
+
+mysql -u username -p
+
+2. Create a database
+
+Create database Database_Name;
+
+3. Use the database created
+
+Use Database_Name;
+
+4.source the file (do not use quotes around filename)
+
+source /Path_To_Filename.sql
