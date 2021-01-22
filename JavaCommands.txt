@@ -2,3 +2,13 @@
 //you can also type this in a text document and store it as .batch file or .sh file and run it
 cd /PathToJar
 java --module-path /Path/javafx-sdk-14.0.1/lib --add-modules fxml,javafx.graphics,javafx.web -jar NameOfTheJarFile.jar
+
+//for compiling a java file
+cd /PathToJavaFile
+//example javac InsertionSort.java
+javac NameOfTheJavaFile.java
+
+//for running a java object file
+cd /PathToJavaObjectFile
+//example java InsertionSort {2,1,3,4,2,5,3,9,1}
+java NameOfTheObjectFile [{args}]
