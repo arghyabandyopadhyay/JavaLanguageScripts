@@ -8,7 +8,7 @@ cd /PathToJavaFile
 //example javac InsertionSort.java
 javac NameOfTheJavaFile.java
 
-//for running a java object file
-cd /PathToJavaObjectFile
+//for running a java class file
+cd /PathToJavaClassFile
 //example java InsertionSort {2,1,3,4,2,5,3,9,1}
-java NameOfTheObjectFile [{args}]
+java NameOfTheClassFile [{args}]
