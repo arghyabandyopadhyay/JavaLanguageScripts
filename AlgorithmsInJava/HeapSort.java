@@ -64,11 +64,11 @@ public class HeapSort {
         HeapSort ob = new HeapSort();
         ob.arrayToBeSorted=new int[args.length];
         for (int j=0;j<args.length;j++)ob.arrayToBeSorted[j]=Integer.parseInt(args[j]);
-        int n = ob.arrayToBeSorted.length;
- 
+        int len = ob.arrayToBeSorted.length;
         ob.heapSort();
- 
-        System.out.println("Sorted array is");
-        ob.printArray();
+        String output="[";
+        for (int j=0;j<len;j++)output+=ob.arrayToBeSorted[j]+",";
+        output=output.substring(0,output.length()-1)+"]";
+        System.out.println(output);
     }
 }
