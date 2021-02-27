@@ -1,5 +1,3 @@
-/* Java program to implement Pigeonhole Sort */
-  
 import java.lang.*; 
 import java.util.*; 
   
