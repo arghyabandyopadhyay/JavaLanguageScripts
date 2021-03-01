@@ -2,9 +2,11 @@
 class TimSort 
 { 
 
+	int arrayToBeSorted[];
+
 	static int MIN_MERGE = 32; 
 
-	public static int minRunLength(int n) 
+	public int minRunLength(int n) 
 	{ 
 		assert n >= 0; 
 		
@@ -20,24 +22,24 @@ class TimSort
 
 	// This function sorts array from left index to 
 	// to right index which is of size atmost RUN 
-	public static void insertionSort(int[] arr, int left, 
+	public void insertionSort(int left, 
 									int right) 
 	{ 
 		for (int i = left + 1; i <= right; i++) 
 		{ 
-			int temp = arr[i]; 
+			int temp = arrayToBeSorted[i]; 
 			int j = i - 1; 
-			while (j >= left && arr[j] > temp) 
+			while (j >= left && arrayToBeSorted[j] > temp) 
 			{ 
-				arr[j + 1] = arr[j]; 
+				arrayToBeSorted[j + 1] = arrayToBeSorted[j]; 
 				j--; 
 			} 
-			arr[j + 1] = temp; 
+			arrayToBeSorted[j + 1] = temp; 
 		} 
 	} 
 
 	// Merge function merges the sorted runs 
-	public static void merge(int[] arr, int l, 
+	public void merge(int l, 
 								int m, int r) 
 	{ 
 		// Original array is broken in two parts 
@@ -47,11 +49,11 @@ class TimSort
 		int[] right = new int[len2]; 
 		for (int x = 0; x < len1; x++) 
 		{ 
-			left[x] = arr[l + x]; 
+			left[x] = arrayToBeSorted[l + x]; 
 		} 
 		for (int x = 0; x < len2; x++) 
 		{ 
-			right[x] = arr[m + 1 + x]; 
+			right[x] = arrayToBeSorted[m + 1 + x]; 
 		} 
 
 		int i = 0; 
@@ -64,11 +66,11 @@ class TimSort
 		{ 
 			if (left[i] <= right[j]) 
 			{ 
-				arr[k] = left[i]; 
+				arrayToBeSorted[k] = left[i]; 
 				i++; 
 			} 
 			else { 
-				arr[k] = right[j]; 
+				arrayToBeSorted[k] = right[j]; 
 				j++; 
 			} 
 			k++; 
@@ -78,7 +80,7 @@ class TimSort
 		// of left, if any 
 		while (i < len1) 
 		{ 
-			arr[k] = left[i]; 
+			arrayToBeSorted[k] = left[i]; 
 			k++; 
 			i++; 
 		} 
@@ -87,7 +89,7 @@ class TimSort
 		// of right, if any 
 		while (j < len2) 
 		{ 
-			arr[k] = right[j]; 
+			arrayToBeSorted[k] = right[j]; 
 			k++; 
 			j++; 
 		} 
@@ -95,14 +97,14 @@ class TimSort
 
 	// Iterative Timsort function to sort the 
 	// array[0...n-1] (similar to merge sort) 
-	public static void timSort(int[] arr, int n) 
+	public void timSort(int n) 
 	{ 
 		int minRun = minRunLength(MIN_MERGE); 
 		
 		// Sort individual subarrays of size RUN 
 		for (int i = 0; i < n; i += minRun) 
 		{ 
-			insertionSort(arr, i, 
+			insertionSort(i, 
 						Math.min((i + 31), (n - 1))); 
 		} 
 
@@ -117,8 +119,8 @@ class TimSort
 			// Pick starting point 
 			// of left sub array. We 
 			// are going to merge 
-			// arr[left..left+size-1] 
-			// and arr[left+size, left+2*size-1] 
+			// arrayToBeSorted[left..left+size-1] 
+			// and arrayToBeSorted[left+size, left+2*size-1] 
 			// After every merge, we 
 			// increase left by 2*size 
 			for (int left = 0; left < n; 
@@ -132,34 +134,23 @@ class TimSort
 				int right = Math.min((left + 2 * size - 1), 
 									(n - 1)); 
 
-				// Merge sub array arr[left.....mid] & 
-				// arr[mid+1....right] 
-				merge(arr, left, mid, right); 
+				// Merge sub array arrayToBeSorted[left.....mid] & 
+				// arrayToBeSorted[mid+1....right] 
+				merge(left, mid, right); 
 			} 
 		} 
 	} 
 
-	// Utility function to print the Array 
-	public static void printArray(int[] arr, int n) 
-	{ 
-		for (int i = 0; i < n; i++) { 
-			System.out.print(arr[i] + " "); 
-		} 
-		System.out.print("\n"); 
-	} 
-
 	// Driver code 
-	public static void main(String[] args) 
-	{ 
-		int[] arr = { -2, 7, 15, -14, 0, 15, 0, 7, 
-					-7, -4, -13, 5, 8, -14, 12 }; 
-		int n = arr.length; 
-		System.out.println("Given Array is"); 
-		printArray(arr, n); 
-
-		timSort(arr, n); 
-
-		System.out.println("After Sorting Array is"); 
-		printArray(arr, n); 
-	} 
+	public static void main(String args[])
+	{
+		TimSort m=new TimSort();
+		m.arrayToBeSorted=new int[args.length];
+		for (int j=0;j<args.length;j++)m.arrayToBeSorted[j]=Integer.parseInt(args[j]);
+		m.timSort(args.length);
+		String output="[";
+		for (int j=0;j<m.arrayToBeSorted.length;j++)output+=m.arrayToBeSorted[j]+",";
+		output=output.substring(0,output.length()-1)+"]";
+		System.out.println(output);
+	}
 }
