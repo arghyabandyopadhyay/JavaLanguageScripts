@@ -12,3 +12,6 @@ javac NameOfTheJavaFile.java
 cd /PathToJavaClassFile
 //example java InsertionSort {2,1,3,4,2,5,3,9,1}
 java NameOfTheClassFile [{args}]
+
+//The following command runs the DictionaryDemo sample with the GeneralDictionary service provider:
+java -Djava.ext.dirs=../DictionaryServiceProvider/dist:../GeneralDictionary/dist -cp dist/DictionaryDemo.jar dictionary.DictionaryDemo
