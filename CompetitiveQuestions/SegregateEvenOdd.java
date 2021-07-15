@@ -1,3 +1,4 @@
+//Problem is to segregate the even no and odd numbers present in a linked list
 //runner statement= java Solution {17,8,12,10,5,4,1,7,6}
 class SegregateEvenOdd{		
 	public static void main(String args[]){
