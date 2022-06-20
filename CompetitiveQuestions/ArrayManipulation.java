@@ -59,34 +59,19 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Result {
-
-    /*
-     * Complete the 'arrayManipulation' function below.
-     *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER n
-     *  2. 2D_INTEGER_ARRAY queries
-     */
-    public static long arrayManipulation(int n, List<List<Integer>> queries) {
-        Long resultArray[]=new Long[n+1];
-        Arrays.fill(resultArray,0l);
-        for(List<Integer> query:queries){
-            int val=query.get(2);
-            resultArray[query.get(0)-1]+=val;
-            resultArray[query.get(1)]-=val;
-        }
-        long sum = 0, res = Integer.MIN_VALUE;
-        for (int i = 0; i < n; ++i)
-        {
-            sum += resultArray[i];
-            res = Math.max(res, sum);
-        }
-        return res;
-    }
-
-}
+//class Result {
+//
+//    /*
+//     * Complete the 'arrayManipulation' function below.
+//     *
+//     * The function is expected to return a LONG_INTEGER.
+//     * The function accepts following parameters:
+//     *  1. INTEGER n
+//     *  2. 2D_INTEGER_ARRAY queries
+//     */
+//
+//
+//}
 
 public class ArrayManipulation {
     public static void main(String[] args) throws IOException {
@@ -114,13 +99,29 @@ public class ArrayManipulation {
             queries.add(queriesRowItems);
         }
 
-        long result = Result.arrayManipulation(n, queries);
+        long result = arrayManipulation(n, queries);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
 
         bufferedReader.close();
         bufferedWriter.close();
+    }
+    public static long arrayManipulation(int n, List<List<Integer>> queries) {
+        Long resultArray[]=new Long[n+1];
+        Arrays.fill(resultArray,0l);
+        for(List<Integer> query:queries){
+            int val=query.get(2);
+            resultArray[query.get(0)-1]+=val;
+            resultArray[query.get(1)]-=val;
+        }
+        long sum = 0, res = Integer.MIN_VALUE;
+        for (int i = 0; i < n; ++i)
+        {
+            sum += resultArray[i];
+            res = Math.max(res, sum);
+        }
+        return res;
     }
 }
 

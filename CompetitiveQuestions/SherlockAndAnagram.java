@@ -68,10 +68,7 @@ class Result {
             return result1;
 
         }
-
-    }
-
-    public class Solution {
+    public static class Solution {
         public static void main(String[] args) throws IOException {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -81,14 +78,17 @@ class Result {
             for (int qItr = 0; qItr < q; qItr++) {
                 String s = bufferedReader.readLine();
 
-            int result = Result.sherlockAndAnagrams(s);
+                int result = Result.sherlockAndAnagrams(s);
 
-            bufferedWriter.write(String.valueOf(result));
-            bufferedWriter.newLine();
+                bufferedWriter.write(String.valueOf(result));
+                bufferedWriter.newLine();
+            }
+
+            bufferedReader.close();
+            bufferedWriter.close();
         }
-
-        bufferedReader.close();
-        bufferedWriter.close();
     }
+
+
 }
 
