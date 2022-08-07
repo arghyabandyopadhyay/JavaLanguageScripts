@@ -1,10 +1,8 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class Result {
 
@@ -22,7 +20,6 @@ class Result {
         return freq;
     }
     public static int sherlockAndAnagrams(String s) {
-        int result=0;
         // for(int i=1;i<=s.length()/2;i++){
         //     System.out.println("i "+i);
         //     for(int j=0;j<s.length()-i+1;j++){

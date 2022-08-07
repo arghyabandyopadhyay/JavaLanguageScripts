@@ -90,7 +90,7 @@ class InorderSuccessorBinaryTree {
     public static void main(String[] args)
     {
         InorderSuccessorBinaryTree tree = new InorderSuccessorBinaryTree();
-        Node root = null, temp = null, suc = null, min = null;
+        Node root = null, temp = null, suc = null;
         root = tree.insert(root, 20);
         root = tree.insert(root, 8);
         root = tree.insert(root, 22);
