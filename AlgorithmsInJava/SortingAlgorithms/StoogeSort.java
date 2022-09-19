@@ -1,5 +1,4 @@
 // Java program to implement stooge sort 
-import java.io.*; 
 
 public class StoogeSort { 
 	int arrayToBeSorted[];
