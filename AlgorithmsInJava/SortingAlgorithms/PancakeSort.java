@@ -1,7 +1,6 @@
 // Java program to
 // sort array using
 // pancake sort
-import java.io.*;
 
 class PancakeSort {
 	int arrayToBeSorted[];
