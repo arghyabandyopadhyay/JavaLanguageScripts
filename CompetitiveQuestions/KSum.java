@@ -7,7 +7,14 @@ public class KSum {
     public List<List<Integer>> kSum(int[] nums,long target, int start, int k){
         List<List<Integer>> result=new ArrayList<>();
         if(start==nums.length)return result;
+
+        // There are k remaining values to add to the sum. The
+        // average of these values is at least target / k.
         long average=target/k;
+
+        // We cannot obtain a sum of target if the smallest value
+        // in nums is greater than target / k or if the largest
+        // value in nums is smaller than target / k.
         if(nums[start]>average||average>nums[nums.length-1])return result;
         if(k==2)return twoSum(nums,target,start);
         for(int i=0;i<nums.length;i++){
