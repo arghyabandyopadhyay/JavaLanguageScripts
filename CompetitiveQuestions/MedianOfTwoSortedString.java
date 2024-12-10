@@ -5,7 +5,6 @@ class MedianOfTwoSortedString {
         int loopLen=nums1Length+nums2Length;
         loopLen=(loopLen%2==0)?((loopLen/2)+1):((loopLen+1)/2);
         int nums1i=0,nums2i=0;
-        int[] arr=new int[loopLen];
         int max=0,lastMax=0;
         int k=0;
         while(nums1i<nums1Length&&nums2i<nums2Length&&k<loopLen){
